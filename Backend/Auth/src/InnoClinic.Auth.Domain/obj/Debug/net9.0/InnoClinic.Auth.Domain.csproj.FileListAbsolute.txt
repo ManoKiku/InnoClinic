@@ -1,0 +1,11 @@
+/home/ManoKiku/InnoClinic/Backend/Auth/src/InnoClinic.Auth.Domain/bin/Debug/net9.0/InnoClinic.Auth.Domain.deps.json
+/home/ManoKiku/InnoClinic/Backend/Auth/src/InnoClinic.Auth.Domain/bin/Debug/net9.0/InnoClinic.Auth.Domain.dll
+/home/ManoKiku/InnoClinic/Backend/Auth/src/InnoClinic.Auth.Domain/bin/Debug/net9.0/InnoClinic.Auth.Domain.pdb
+/home/ManoKiku/InnoClinic/Backend/Auth/src/InnoClinic.Auth.Domain/obj/Debug/net9.0/InnoClinic.Auth.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/ManoKiku/InnoClinic/Backend/Auth/src/InnoClinic.Auth.Domain/obj/Debug/net9.0/InnoClinic.Auth.Domain.AssemblyInfoInputs.cache
+/home/ManoKiku/InnoClinic/Backend/Auth/src/InnoClinic.Auth.Domain/obj/Debug/net9.0/InnoClinic.Auth.Domain.AssemblyInfo.cs
+/home/ManoKiku/InnoClinic/Backend/Auth/src/InnoClinic.Auth.Domain/obj/Debug/net9.0/InnoClinic.Auth.Domain.csproj.CoreCompileInputs.cache
+/home/ManoKiku/InnoClinic/Backend/Auth/src/InnoClinic.Auth.Domain/obj/Debug/net9.0/InnoClinic.Auth.Domain.dll
+/home/ManoKiku/InnoClinic/Backend/Auth/src/InnoClinic.Auth.Domain/obj/Debug/net9.0/refint/InnoClinic.Auth.Domain.dll
+/home/ManoKiku/InnoClinic/Backend/Auth/src/InnoClinic.Auth.Domain/obj/Debug/net9.0/InnoClinic.Auth.Domain.pdb
+/home/ManoKiku/InnoClinic/Backend/Auth/src/InnoClinic.Auth.Domain/obj/Debug/net9.0/ref/InnoClinic.Auth.Domain.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "InnoClinic.Auth.Domain/1.0.0": {
+        "runtime": {
+          "InnoClinic.Auth.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "InnoClinic.Auth.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

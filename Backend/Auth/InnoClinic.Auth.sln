@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.Auth.Domain", "src\InnoClinic.Auth.Domain\InnoClinic.Auth.Domain.csproj", "{3EC882CC-7F4A-4122-85AE-B805DD7B005B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.Auth.Application", "src\InnoClinic.Auth.Application\InnoClinic.Auth.Application.csproj", "{1BF16C06-507C-4E68-99CE-314CBECC49AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.Auth.WEB", "src\InnoClinic.Auth.WEB\InnoClinic.Auth.WEB.csproj", "{C7FCDFFB-809B-42B3-B188-4C96571EAA11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EC882CC-7F4A-4122-85AE-B805DD7B005B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC882CC-7F4A-4122-85AE-B805DD7B005B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC882CC-7F4A-4122-85AE-B805DD7B005B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC882CC-7F4A-4122-85AE-B805DD7B005B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BF16C06-507C-4E68-99CE-314CBECC49AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BF16C06-507C-4E68-99CE-314CBECC49AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BF16C06-507C-4E68-99CE-314CBECC49AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BF16C06-507C-4E68-99CE-314CBECC49AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7FCDFFB-809B-42B3-B188-4C96571EAA11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7FCDFFB-809B-42B3-B188-4C96571EAA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7FCDFFB-809B-42B3-B188-4C96571EAA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7FCDFFB-809B-42B3-B188-4C96571EAA11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

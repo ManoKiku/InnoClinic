@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Vf+sd2ofdsIikxd9zykBUqMdcdU2mgaNRSwRJ8l1Dxw=",
+  "Source": "InnoClinic.Auth.WEB",
+  "BasePath": "_content/InnoClinic.Auth.WEB",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
