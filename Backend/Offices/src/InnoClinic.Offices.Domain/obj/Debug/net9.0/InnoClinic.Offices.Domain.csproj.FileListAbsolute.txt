@@ -1,0 +1,12 @@
+/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/bin/Debug/net9.0/InnoClinic.Offices.Domain.deps.json
+/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/bin/Debug/net9.0/InnoClinic.Offices.Domain.dll
+/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/bin/Debug/net9.0/InnoClinic.Offices.Domain.pdb
+/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/obj/Debug/net9.0/InnoClinic.Offices.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/obj/Debug/net9.0/InnoClinic.Offices.Domain.AssemblyInfoInputs.cache
+/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/obj/Debug/net9.0/InnoClinic.Offices.Domain.AssemblyInfo.cs
+/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/obj/Debug/net9.0/InnoClinic.Offices.Domain.csproj.CoreCompileInputs.cache
+/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/obj/Debug/net9.0/InnoClinic.Offices.Domain.sourcelink.json
+/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/obj/Debug/net9.0/InnoClinic.Offices.Domain.dll
+/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/obj/Debug/net9.0/refint/InnoClinic.Offices.Domain.dll
+/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/obj/Debug/net9.0/InnoClinic.Offices.Domain.pdb
+/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/obj/Debug/net9.0/ref/InnoClinic.Offices.Domain.dll

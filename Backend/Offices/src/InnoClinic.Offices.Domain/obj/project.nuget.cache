@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "j151IvJGMqk=",
+  "success": true,
+  "projectFilePath": "/home/ManoKiku/InnoClinic/Backend/Offices/src/InnoClinic.Offices.Domain/InnoClinic.Offices.Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/ManoKiku/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

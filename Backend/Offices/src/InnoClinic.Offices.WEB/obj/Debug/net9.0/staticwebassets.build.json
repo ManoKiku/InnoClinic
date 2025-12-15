@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "QcpSpt9b7U1h/WcmZrPSHRquZsowcHj86ESeCsOsFFo=",
+  "Source": "InnoClinic.Offices.WEB",
+  "BasePath": "_content/InnoClinic.Offices.WEB",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

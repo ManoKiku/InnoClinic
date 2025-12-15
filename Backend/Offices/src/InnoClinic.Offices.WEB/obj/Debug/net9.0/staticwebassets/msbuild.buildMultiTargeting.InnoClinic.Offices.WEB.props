@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/InnoClinic.Offices.WEB.props" />
+</Project>

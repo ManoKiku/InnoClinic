@@ -13,12 +13,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Title = "InnoClinic Auth API",
         Version = "v1",
-        Description = "Authentication and Authorization API for InnoClinic",
-        Contact = new OpenApiContact
-        {
-            Name = "InnoClinic Team",
-            Email = "support@innoclinic.com"
-        }
+        Description = "Authentication and Authorization API for InnoClinic"
     });
     
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme

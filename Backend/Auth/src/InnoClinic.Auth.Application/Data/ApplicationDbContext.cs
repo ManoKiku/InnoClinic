@@ -14,6 +14,7 @@ public class ApplicationDbContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+	modelBuilder.Entity<Account>().HasKey(a => a.Id);
         modelBuilder.Entity<Account>().Property(a => a.Id).IsRequired();
         modelBuilder.Entity<Account>().Property(a => a.Email).IsRequired();
         modelBuilder.Entity<Account>().Property(a => a.PasswordHash).IsRequired();
