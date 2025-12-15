@@ -1,0 +1,84 @@
+# Ignore .idea folders everywhere
+.idea/
+
+# Ignore bin folders everywhere
+bin/
+
+#----------------------------------------------------------------------#
+# JetBrains Rider/IntelliJ IDE ignored files/folders                   #
+#----------------------------------------------------------------------#
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/shelf
+.idea/dataSources.local.xml
+.idea/dataSources.xml.bak
+.idea/dataSources.local.xml.bak
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/contentModel.xml
+.idea/retire.xml
+.idea/vcs.xml
+.idea/runConfigurations.xml
+.idea/appConfig.xml
+.idea/dataVisualizationSettings.xml
+.idea/assetWizardSettings.xml
+.idea/console.sql
+.idea/encodings.xml
+.idea/external_system.xml
+.idea/findbugs-idea.xml
+.idea/gradle.xml
+.idea/markdown-navigator.xml
+.idea/markdown-navigator-enh.xml
+.idea/jsLibraryMappings.xml
+.idea/libraries.xml
+.idea/misc.xml
+.idea/modulifier.xml
+.idea/scopes/scope_settings.xml
+.idea/copyright/profiles_settings.xml
+.idea/uiDesigner.xml
+.idea/optimize_imports_settings.xml
+.idea/psr.xml
+.idea/sass_settings.xml
+.idea/sqldialects.xml
+.idea/watcherTasks.xml
+.idea/fileTemplates/
+.idea/cody_history.xml
+.idea/extractFieldSettings.xml
+.idea/git_toolbox_prj.xml
+.idea/httpRequests/
+.idea/extractMethodSettings.xml
+
+# The following files should be committed to VCS, so they are not ignored here:
+# .idea/indexLayout.xml
+# .idea/modules.xml
+# .idea/projectSettings.xml
+# .idea/compiler.xml
+# .idea/*.iml
+# .idea/vcs.xml (if you want to share VCS settings)
+
+#----------------------------------------------------------------------#
+# .NET/Build results ignores (standard for C# projects)                #
+#----------------------------------------------------------------------#
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+*.cache
+*.suo
+*.user
+*.pid
+*.log
+*.vspscc
+*.vssscc
+.vs/                  # Visual Studio 2017+
+publish/
+build/
+# Rider-specific
+RiderLink/
+DerivedData/
+
+# Packages
+*.nupkg
+[Tt]emp/
+
