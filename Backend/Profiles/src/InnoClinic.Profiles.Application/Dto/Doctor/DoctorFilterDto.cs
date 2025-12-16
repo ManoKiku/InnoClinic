@@ -1,4 +1,4 @@
-namespace InnoClinic.Profiles.Application.Dto;
+namespace InnoClinic.Profiles.Application.Dto.Doctor;
 
 /// <summary>
 /// Data transfer object for filtering doctors

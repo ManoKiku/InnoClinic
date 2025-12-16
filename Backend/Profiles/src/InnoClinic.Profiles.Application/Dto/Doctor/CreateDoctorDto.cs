@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace InnoClinic.Profiles.Application.Dto;
+namespace InnoClinic.Profiles.Application.Dto.Doctor;
 
 /// <summary>
 /// Data transfer object for creating a new doctor
@@ -28,7 +28,7 @@ public class CreateDoctorDto
     /// </summary>
     /// <example>Michael</example>
     [MaxLength(50)]
-    public string MiddleName { get; set; }
+    public string? MiddleName { get; set; }
 
     /// <summary>
     /// Doctor's date of birth

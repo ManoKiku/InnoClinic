@@ -1,5 +1,5 @@
 using InnoClinic.Profiles.Application.Data;
-using InnoClinic.Profiles.Application.Dto;
+using InnoClinic.Profiles.Application.Dto.Doctor;
 using InnoClinic.Profiles.Domain.Entities;
 using InnoClinic.Profiles.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
@@ -65,6 +65,7 @@ public class DoctorService : IDoctorService
     {
         var doctor = new Doctor
         {
+            Id = Guid.NewGuid(), 
             FirstName = doctorDto.FirstName,
             LastName = doctorDto.LastName,
             MiddleName = doctorDto.MiddleName,
@@ -75,7 +76,6 @@ public class DoctorService : IDoctorService
             CareerStartYear = doctorDto.CareerStartYear
         };
         
-        doctor.Id = Guid.NewGuid();
         doctor.Status = DoctorStatus.Inactive;
 
         _context.Doctors.Add(doctor);
@@ -144,7 +144,7 @@ public class DoctorService : IDoctorService
         return MapToDto(doctor);
     }
     
-    private DoctorDto MapToDto(Doctor doctor)
+    private  static  DoctorDto MapToDto(Doctor doctor)
     {
         return new DoctorDto()
         {

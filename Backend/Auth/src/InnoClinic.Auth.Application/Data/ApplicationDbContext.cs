@@ -14,12 +14,14 @@ public class ApplicationDbContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-	modelBuilder.Entity<Account>().HasKey(a => a.Id);
-        modelBuilder.Entity<Account>().Property(a => a.Id).IsRequired();
-        modelBuilder.Entity<Account>().Property(a => a.Email).IsRequired();
-        modelBuilder.Entity<Account>().Property(a => a.PasswordHash).IsRequired();
-        modelBuilder.Entity<Account>().Property(a => a.PhoneNumber).IsRequired();
-        modelBuilder.Entity<Account>().Property(a => a.CreatedAt).IsRequired();
-        modelBuilder.Entity<Account>().Property(a => a.CreatedBy).IsRequired();
+        modelBuilder.Entity<Account>((e) =>
+        {
+            e.HasKey(a => a.Id);
+            e.Property(a => a.CreatedAt).IsRequired();
+            e.Property(a => a.CreatedBy).IsRequired();
+            e.Property(a => a.Email).IsRequired();
+            e.Property(a => a.PasswordHash).IsRequired();
+            e.Property(a => a.PhoneNumber).IsRequired();
+        });
     }
 }

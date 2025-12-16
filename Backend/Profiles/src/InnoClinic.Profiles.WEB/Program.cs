@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Title = "InnoClinic Profiles API",
         Version = "v1",
-        Description = "Profiles API for InnoClinic"
+        Description = "Profiles API for InnoClinic",
     });
     
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -67,7 +67,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Offies API v1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Profiles API v1");
         c.RoutePrefix = string.Empty;
     });
 }

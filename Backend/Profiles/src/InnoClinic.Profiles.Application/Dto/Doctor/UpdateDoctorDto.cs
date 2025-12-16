@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace InnoClinic.Profiles.Application.Dto;
+namespace InnoClinic.Profiles.Application.Dto.Doctor;
 
 /// <summary>
 /// Data transfer object for updating an existing doctor

@@ -1,4 +1,4 @@
-using InnoClinic.Profiles.Application.Dto;
+using InnoClinic.Profiles.Application.Dto.Doctor;
 
 namespace InnoClinic.Profiles.Application.Services;
 

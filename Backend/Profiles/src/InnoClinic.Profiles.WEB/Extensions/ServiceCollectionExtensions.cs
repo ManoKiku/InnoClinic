@@ -15,6 +15,7 @@ public static class ServiceCollectionExtensions
                 b => b.MigrationsAssembly("InnoClinic.Profiles.Application")));
 
         services.AddScoped<IDoctorService, DoctorService>();
+        services.AddScoped<IPatientService, PatientService>();
 
         services.AddExceptionHandler<GlobalExceptionHandler>();
         services.AddProblemDetails();
