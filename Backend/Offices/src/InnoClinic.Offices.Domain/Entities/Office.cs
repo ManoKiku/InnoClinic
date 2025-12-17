@@ -2,7 +2,7 @@ namespace InnoClinic.Offices.Domain.Entities;
 
 public class Office
 {
-    public string Id { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
     public string Address { get; set; }
     public Guid PhotoId { get; set; }
     public string RegistryPhoneNumber { get; set; }

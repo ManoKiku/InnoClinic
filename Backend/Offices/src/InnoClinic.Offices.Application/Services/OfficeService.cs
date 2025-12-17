@@ -35,14 +35,15 @@ public class OfficeService : IOfficeService
         _logger.LogInformation("Retrieved {Count} offices", offices.Count);
         
         return offices.Select(MapToDto);
-    }
+    }   
 
     
-    public async Task<OfficeDto> GetOfficeByIdAsync(string id)
+    public async Task<OfficeDto> GetOfficeByIdAsync(Guid id)
     {
         _logger.LogInformation("Retrieving office with ID: {Id}", id);
         
-        var office = await _context.Offices.Find(id).FirstOrDefaultAsync();
+        var filter = Builders<Office>.Filter.Eq(d => d.Id, id);
+        var office = await _context.Offices.Find(filter).FirstOrDefaultAsync();
         
         if (office == null)
         {
@@ -74,11 +75,12 @@ public class OfficeService : IOfficeService
     }
 
     
-    public async Task<OfficeDto> UpdateOfficeAsync(string id, UpdateOfficeDto updateOfficeDto)
+    public async Task<OfficeDto> UpdateOfficeAsync(Guid id, UpdateOfficeDto updateOfficeDto)
     {
         _logger.LogInformation("Updating office with ID: {Id}", id);
         
-        var office = await _context.Offices.Find(id).FirstOrDefaultAsync();
+        var filter = Builders<Office>.Filter.Eq(d => d.Id, id);                  
+        var office = await _context.Offices.Find(filter).FirstOrDefaultAsync();  
         
         if (office == null)
         {
@@ -106,18 +108,19 @@ public class OfficeService : IOfficeService
             office.IsActive = updateOfficeDto.IsActive.Value;
         }
 
-        await _context.Offices.FindOneAndReplaceAsync(office.Id, office);
+        await _context.Offices.FindOneAndReplaceAsync(filter, office);
 
         _logger.LogInformation("Office with ID {Id} updated successfully", id);
         return MapToDto(office);
     }
 
     
-    public async Task<bool> DeleteOfficeAsync(string id)
+    public async Task<bool> DeleteOfficeAsync(Guid id)
     {
         _logger.LogInformation("Deleting office with ID: {Id}", id);
         
-        var office = await _context.Offices.Find(id).FirstOrDefaultAsync();
+        var filter = Builders<Office>.Filter.Eq(d => d.Id, id);                 
+        var office = await _context.Offices.Find(filter).FirstOrDefaultAsync(); 
         
         if (office == null)
         {
@@ -125,37 +128,40 @@ public class OfficeService : IOfficeService
             throw new KeyNotFoundException($"Office with identifier {id} was not found");
         }
 
-        await _context.Offices.FindOneAndDeleteAsync(office.Id);
+        await _context.Offices.FindOneAndDeleteAsync(filter);
 
         _logger.LogInformation("Office with ID {Id} deleted successfully", id);
         return true;
     }
 
     
-    public async Task<OfficeDto> ActivateOfficeAsync(string id)
+    public async Task<OfficeDto> ActivateOfficeAsync(Guid id)
     {
         _logger.LogInformation("Activating office with ID: {Id}", id);
         
-        var office = await _context.Offices.Find(id).FirstOrDefaultAsync();
+        var filter = Builders<Office>.Filter.Eq(d => d.Id, id);                 
+        var office = await _context.Offices.Find(filter).FirstOrDefaultAsync(); 
 
         if (office == null)
         {
             _logger.LogWarning("Office with ID {Id} not found for activation", id);
             throw new KeyNotFoundException($"Office with identifier {id} was not found");
         }
-
-        await _context.Offices.UpdateOneAsync(id, Builders<Office>.Update.Set(x => x.IsActive, true));
+        
+        office.IsActive = true;
+        await _context.Offices.UpdateOneAsync(filter, Builders<Office>.Update.Set(x => x.IsActive, true));
 
         _logger.LogInformation("Office with ID {Id} activated successfully", id);
         return MapToDto(office);
     }
 
     
-    public async Task<OfficeDto> DeactivateOfficeAsync(string id)
+    public async Task<OfficeDto> DeactivateOfficeAsync(Guid id)
     {
         _logger.LogInformation("Deactivating office with ID: {Id}", id);
         
-        var office = await _context.Offices.Find(id).FirstOrDefaultAsync();
+        var filter = Builders<Office>.Filter.Eq(d => d.Id, id);                 
+        var office = await _context.Offices.Find(filter).FirstOrDefaultAsync(); 
         
         if (office == null)
         {
@@ -163,7 +169,8 @@ public class OfficeService : IOfficeService
             throw new KeyNotFoundException($"Office with identifier {id} was not found");
         }
 
-        await _context.Offices.UpdateOneAsync(id, Builders<Office>.Update.Set(x => x.IsActive, false));
+        office.IsActive = false;
+        await _context.Offices.UpdateOneAsync(filter, Builders<Office>.Update.Set(x => x.IsActive, false));
 
         _logger.LogInformation("Office with ID {Id} deactivated successfully", id);
         return MapToDto(office);
