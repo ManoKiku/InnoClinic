@@ -51,16 +51,16 @@ public class PatientService : IPatientService
         return patients.Select(MapToDto);
     }
 
-    public async Task<PatientDto> CreateAsync(CreatePatientDto PatientDto)
+    public async Task<PatientDto> CreateAsync(CreatePatientDto patientDto)
     {
         var patient = new Patient
         {
             Id = Guid.NewGuid(),
-            AccountId = PatientDto.AccountId,
-            DateOfBirth = PatientDto.DateOfBirth,
-            FirstName = PatientDto.FirstName,
-            LastName = PatientDto.LastName,
-            MiddleName = PatientDto.MiddleName
+            AccountId = patientDto.AccountId,
+            DateOfBirth = patientDto.DateOfBirth,
+            FirstName = patientDto.FirstName,
+            LastName = patientDto.LastName,
+            MiddleName = patientDto.MiddleName
         };
         
         _context.Patients.Add(patient);

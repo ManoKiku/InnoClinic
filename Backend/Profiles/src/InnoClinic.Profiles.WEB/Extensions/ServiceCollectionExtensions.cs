@@ -16,6 +16,7 @@ public static class ServiceCollectionExtensions
 
         services.AddScoped<IDoctorService, DoctorService>();
         services.AddScoped<IPatientService, PatientService>();
+        services.AddScoped<IReceptionistService, ReceptionistService>();
 
         services.AddExceptionHandler<GlobalExceptionHandler>();
         services.AddProblemDetails();

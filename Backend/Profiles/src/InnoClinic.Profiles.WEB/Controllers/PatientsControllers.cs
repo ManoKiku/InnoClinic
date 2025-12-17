@@ -21,7 +21,7 @@ public class PatientsController : ControllerBase
     }
 
     /// <summary>
-    /// Get Patient by ID
+    /// Get patient by ID
     /// </summary>
     /// <param name="id">Patient's unique identifier</param>
     /// <returns>Patient details</returns>
@@ -36,7 +36,7 @@ public class PatientsController : ControllerBase
     }
 
     /// <summary>
-    /// Get Patient by account ID
+    /// Get patient by account ID
     /// </summary>
     /// <param name="accountId">Associated account ID</param>
     /// <returns>Patient details</returns>
@@ -66,10 +66,10 @@ public class PatientsController : ControllerBase
     }
 
     /// <summary>
-    /// Create a new Patient
+    /// Create a new patient
     /// </summary>
     /// <param name="patientDto">Patient creation data</param>
-    /// <returns>Created Patient details</returns>
+    /// <returns>Created patient details</returns>
     [HttpPost]
     [ProducesResponseType(typeof(PatientDto), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
@@ -85,7 +85,7 @@ public class PatientsController : ControllerBase
     /// </summary>
     /// <param name="id">Patient's unique identifier</param>
     /// <param name="patientDto">Patient update data</param>
-    /// <returns>Updated Patient details</returns>
+    /// <returns>Updated patient details</returns>
     [HttpPut("{id}")]
     [ProducesResponseType(typeof(PatientDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
@@ -98,7 +98,7 @@ public class PatientsController : ControllerBase
     }
 
     /// <summary>
-    /// Delete a Patient by ID
+    /// Delete a patient by ID
     /// </summary>
     /// <param name="id">Patient's unique identifier</param>
     /// <returns>No content</returns>
