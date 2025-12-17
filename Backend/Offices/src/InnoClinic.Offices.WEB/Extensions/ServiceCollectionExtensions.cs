@@ -1,4 +1,5 @@
 using InnoClinic.Offices.Application.Data;
+using InnoClinic.Offices.Application.Models;
 using InnoClinic.Offices.Application.Services;
 using InnoClinic.Offices.WEB.Middleware;
 using Microsoft.EntityFrameworkCore;
@@ -9,10 +10,8 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(
-                configuration.GetConnectionString("DefaultConnection"),
-                b => b.MigrationsAssembly("InnoClinic.Offices.Application")));
+        services.Configure<MongoConfig>(configuration.GetSection("MongoConfig"));
+        services.AddSingleton<ApplicationDbContext>();
 
         services.AddScoped<IOfficeService, OfficeService>();
 

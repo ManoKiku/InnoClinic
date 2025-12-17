@@ -48,7 +48,7 @@ public class OfficesController : ControllerBase
     /// <summary>
     /// Get office by identifier
     /// </summary>
-    /// <param name="id">Office unique identifier (GUID)</param>
+    /// <param name="id">Office unique identifier</param>
     /// <returns>Office DTO</returns>
     /// <response code="200">Returns the requested office</response>
     /// <response code="400">Invalid identifier format</response>
@@ -63,7 +63,7 @@ public class OfficesController : ControllerBase
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status403Forbidden)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<OfficeDto>> GetOffice(Guid id)
+    public async Task<ActionResult<OfficeDto>> GetOffice(string id)
     {
         _logger.LogInformation("GET request for office with ID: {Id}", id);
         
@@ -118,7 +118,7 @@ public class OfficesController : ControllerBase
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status409Conflict)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<OfficeDto>> UpdateOffice(Guid id, [FromBody] UpdateOfficeDto updateOfficeDto)
+    public async Task<ActionResult<OfficeDto>> UpdateOffice(string id, [FromBody] UpdateOfficeDto updateOfficeDto)
     {
         _logger.LogInformation("PUT request to update office with ID: {Id}", id);
         
@@ -144,7 +144,7 @@ public class OfficesController : ControllerBase
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status403Forbidden)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> DeleteOffice(Guid id)
+    public async Task<IActionResult> DeleteOffice(string id)
     {
         _logger.LogInformation("DELETE request for office with ID: {Id}", id);
         
@@ -170,7 +170,7 @@ public class OfficesController : ControllerBase
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status403Forbidden)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<OfficeDto>> ActivateOffice(Guid id)
+    public async Task<ActionResult<OfficeDto>> ActivateOffice(string id)
     {
         _logger.LogInformation("PATCH request to activate office with ID: {Id}", id);
         
@@ -196,7 +196,7 @@ public class OfficesController : ControllerBase
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status403Forbidden)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<OfficeDto>> DeactivateOffice(Guid id)
+    public async Task<ActionResult<OfficeDto>> DeactivateOffice(string id)
     {
         _logger.LogInformation("PATCH request to deactivate office with ID: {Id}", id);
         

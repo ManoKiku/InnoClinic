@@ -10,9 +10,9 @@ public class OfficeDto
 {
     /// <summary>
     /// Office id
-    /// <example>123e4567-e89b-12d3-a456-426614174000</example>
+    /// <example>123e4567e89b12d3a4564266</example>
     /// </summary>
-    public Guid Id { get; set; }
+    public string Id { get; set; }
     
     /// <summary>
     /// Office address

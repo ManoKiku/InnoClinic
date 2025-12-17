@@ -1,8 +1,10 @@
 using InnoClinic.Offices.Application.Data;
 using InnoClinic.Offices.Application.Dto;
 using InnoClinic.Offices.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace InnoClinic.Offices.Application.Services;
 
@@ -22,7 +24,7 @@ public class OfficeService : IOfficeService
     {
         _logger.LogInformation("Retrieving all offices with filter: isActive={IsActive}", isActive);
         
-        IQueryable<Office> query = _context.Offices;
+        IQueryable<Office> query = _context.Offices.AsQueryable();
 
         if (isActive.HasValue)
         {
@@ -36,11 +38,11 @@ public class OfficeService : IOfficeService
     }
 
     
-    public async Task<OfficeDto> GetOfficeByIdAsync(Guid id)
+    public async Task<OfficeDto> GetOfficeByIdAsync(string id)
     {
         _logger.LogInformation("Retrieving office with ID: {Id}", id);
         
-        var office = await _context.Offices.FindAsync(id);
+        var office = await _context.Offices.Find(id).FirstOrDefaultAsync();
         
         if (office == null)
         {
@@ -59,26 +61,24 @@ public class OfficeService : IOfficeService
         
         var office = new Office
         {
-            Id = Guid.NewGuid(),
             Address = createOfficeDto.Address,
             PhotoId = createOfficeDto.PhotoId,
             RegistryPhoneNumber = createOfficeDto.RegistryPhoneNumber,
             IsActive = createOfficeDto.IsActive
         };
 
-        _context.Offices.Add(office);
-        await _context.SaveChangesAsync();
+        await _context.Offices.InsertOneAsync(office);
 
         _logger.LogInformation("Office created successfully with ID: {Id}", office.Id);
         return MapToDto(office);
     }
 
     
-    public async Task<OfficeDto> UpdateOfficeAsync(Guid id, UpdateOfficeDto updateOfficeDto)
+    public async Task<OfficeDto> UpdateOfficeAsync(string id, UpdateOfficeDto updateOfficeDto)
     {
         _logger.LogInformation("Updating office with ID: {Id}", id);
         
-        var office = await _context.Offices.FindAsync(id);
+        var office = await _context.Offices.Find(id).FirstOrDefaultAsync();
         
         if (office == null)
         {
@@ -106,19 +106,18 @@ public class OfficeService : IOfficeService
             office.IsActive = updateOfficeDto.IsActive.Value;
         }
 
-        _context.Offices.Update(office);
-        await _context.SaveChangesAsync();
+        await _context.Offices.FindOneAndReplaceAsync(office.Id, office);
 
         _logger.LogInformation("Office with ID {Id} updated successfully", id);
         return MapToDto(office);
     }
 
     
-    public async Task<bool> DeleteOfficeAsync(Guid id)
+    public async Task<bool> DeleteOfficeAsync(string id)
     {
         _logger.LogInformation("Deleting office with ID: {Id}", id);
         
-        var office = await _context.Offices.FindAsync(id);
+        var office = await _context.Offices.Find(id).FirstOrDefaultAsync();
         
         if (office == null)
         {
@@ -126,40 +125,37 @@ public class OfficeService : IOfficeService
             throw new KeyNotFoundException($"Office with identifier {id} was not found");
         }
 
-        _context.Offices.Remove(office);
-        await _context.SaveChangesAsync();
+        await _context.Offices.FindOneAndDeleteAsync(office.Id);
 
         _logger.LogInformation("Office with ID {Id} deleted successfully", id);
         return true;
     }
 
     
-    public async Task<OfficeDto> ActivateOfficeAsync(Guid id)
+    public async Task<OfficeDto> ActivateOfficeAsync(string id)
     {
         _logger.LogInformation("Activating office with ID: {Id}", id);
         
-        var office = await _context.Offices.FindAsync(id);
-        
+        var office = await _context.Offices.Find(id).FirstOrDefaultAsync();
+
         if (office == null)
         {
             _logger.LogWarning("Office with ID {Id} not found for activation", id);
             throw new KeyNotFoundException($"Office with identifier {id} was not found");
         }
 
-        office.IsActive = true;
-        _context.Offices.Update(office);
-        await _context.SaveChangesAsync();
+        await _context.Offices.UpdateOneAsync(id, Builders<Office>.Update.Set(x => x.IsActive, true));
 
         _logger.LogInformation("Office with ID {Id} activated successfully", id);
         return MapToDto(office);
     }
 
     
-    public async Task<OfficeDto> DeactivateOfficeAsync(Guid id)
+    public async Task<OfficeDto> DeactivateOfficeAsync(string id)
     {
         _logger.LogInformation("Deactivating office with ID: {Id}", id);
         
-        var office = await _context.Offices.FindAsync(id);
+        var office = await _context.Offices.Find(id).FirstOrDefaultAsync();
         
         if (office == null)
         {
@@ -167,9 +163,7 @@ public class OfficeService : IOfficeService
             throw new KeyNotFoundException($"Office with identifier {id} was not found");
         }
 
-        office.IsActive = false;
-        _context.Offices.Update(office);
-        await _context.SaveChangesAsync();
+        await _context.Offices.UpdateOneAsync(id, Builders<Office>.Update.Set(x => x.IsActive, false));
 
         _logger.LogInformation("Office with ID {Id} deactivated successfully", id);
         return MapToDto(office);

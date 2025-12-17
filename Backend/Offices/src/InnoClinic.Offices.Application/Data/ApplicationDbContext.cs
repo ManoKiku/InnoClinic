@@ -1,22 +1,24 @@
+using InnoClinic.Offices.Application.Models;
 using InnoClinic.Offices.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 
 namespace InnoClinic.Offices.Application.Data;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-    {
-        
-    }
-    
-    public DbSet<Office> Offices { get; set; }
+    private readonly MongoClient _mongoClient;
+    private readonly IMongoDatabase _database;
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    public IMongoCollection<Office> Offices { get; }
+
+    ApplicationDbContext(IOptions<MongoConfig> mongoConfig)
     {
-        modelBuilder.Entity<Office>().HasKey(o => o.Id);
-        modelBuilder.Entity<Office>().Property(o => o.Id).IsRequired();
-        modelBuilder.Entity<Office>().Property(o => o.Address).IsRequired();
-        modelBuilder.Entity<Office>().Property(o => o.RegistryPhoneNumber).IsRequired();
+        var config = mongoConfig.Value;
+        
+        _mongoClient = new MongoClient(config.ConnectionString);
+        _database = _mongoClient.GetDatabase(config.Database);
+        Offices = _database.GetCollection<Office>(config.Collection);
     }
 }
