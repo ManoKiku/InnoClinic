@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.Appointments.Application", "src\InnoClinic.Appointments.Application\InnoClinic.Appointments.Application.csproj", "{8BC2959F-C617-4602-A140-816AC20FD69A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.Appointments.Domain", "src\InnoClinic.Appointments.Domain\InnoClinic.Appointments.Domain.csproj", "{B3251B47-BA76-4B53-8EFD-034498CEE487}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.Appointments.WEB", "src\InnoClinic.Appointments.WEB\InnoClinic.Appointments.WEB.csproj", "{441D52D2-B715-4621-85AC-9640790433CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BC2959F-C617-4602-A140-816AC20FD69A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC2959F-C617-4602-A140-816AC20FD69A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC2959F-C617-4602-A140-816AC20FD69A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC2959F-C617-4602-A140-816AC20FD69A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3251B47-BA76-4B53-8EFD-034498CEE487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3251B47-BA76-4B53-8EFD-034498CEE487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3251B47-BA76-4B53-8EFD-034498CEE487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3251B47-BA76-4B53-8EFD-034498CEE487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{441D52D2-B715-4621-85AC-9640790433CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{441D52D2-B715-4621-85AC-9640790433CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{441D52D2-B715-4621-85AC-9640790433CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{441D52D2-B715-4621-85AC-9640790433CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
